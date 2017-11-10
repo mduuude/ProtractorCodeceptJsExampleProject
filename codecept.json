@@ -1,0 +1,23 @@
+{
+  "output": "./output",
+  "helpers": {
+    "Protractor": {
+      "url": "https://www.google.com",
+      "driver": "hosted",
+      "browser": "firefox",
+      "rootElement": "html"
+    }
+  },
+  "include": {
+    "I": "./steps_file.js",
+    "main_pagePage": "./pages/main_page.js",
+    "headerFragment": "./fragments/header_unauth.js"
+  },
+  "mocha": {},
+  "bootstrap": false,
+  "teardown": null,
+  "hooks": [],
+  "tests": "./tests/*_test.js",
+  "timeout": 5000,
+  "name": "ProtractorWebdriverExampleProject"
+}

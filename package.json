@@ -1,0 +1,13 @@
+{
+  "name": "ProtractorWebdriverExampleProject",
+  "version": "0.0.1",
+  "scripts": {
+    "server": "selenium-standalone start",
+    "e2e": "codeceptjs run"
+  },
+  "devDependencies": {
+    "codeceptjs-protractor": "^1.1.0",
+    "jshint": "^2.9.5",
+    "moment": "^2.19.1"
+  }
+}
