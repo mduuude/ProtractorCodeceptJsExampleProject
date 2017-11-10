@@ -2,10 +2,15 @@
   "output": "./output",
   "helpers": {
     "Protractor": {
-      "url": "https://www.google.com",
       "driver": "hosted",
-      "browser": "firefox",
-      "rootElement": "html"
+      "browser": "chrome",
+      "rootElement": "html",
+      "smartWait": 5000,
+      "windowSize": "1365x768",
+      "scriptsTimeout": 5000
+    },
+    "ProtractorHelper": {
+      "require": "./helpers/protractor_helper.js"
     }
   },
   "include": {
