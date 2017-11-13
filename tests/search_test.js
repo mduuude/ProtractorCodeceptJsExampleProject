@@ -1,8 +1,7 @@
 let fragHeader = require("../fragments/header_unauth"),
     pageMain = require("../pages/main_page"),
     pageSearchResults = require("../pages/search_results_page"),
-    utilTime = require("../utils/time_util"),
-    assert = require('assert');
+    utilTime = require("../utils/time_util");
 
 const baseUrl = 'https://www.booking.com';
 
@@ -25,5 +24,5 @@ Scenario('Test correct search by analyzing result set', function*(I) {
 
     let searchResultItemsTexts = yield I.grabElementsByLocator(pageSearchResults.locators.listSearchResults.listItemLocationName);
     I.checkGreaterThan(searchResultItemsTexts.length, testNumOfSearchResultsToCompare);
-    I.checkArrayOfStringsIncludesNeedleString(searchResultItemsTexts, 'New York');
+    I.checkArrayOfStringsIncludesNeedleString(searchResultItemsTexts, testCityName);
 });
