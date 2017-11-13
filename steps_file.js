@@ -7,14 +7,14 @@ module.exports = function () {
         /**
          * Check multiple elements are on the page, up to second level of nesting
          *
-         * @param {object|string} selectors - given object of CSS|XPath|text locators
+         * @param {object|string} locators - given object of CSS|XPath locators
          */
-        seeManyElements(selectors) {
-            Object.keys(selectors).forEach((selectorKey) => {
-                let selector = selectors[selectorKey];
+        seeManyElements(locators) {
+            Object.keys(locators).forEach((selectorKey) => {
+                let selector = locators[selectorKey];
 
                 if (selector.hasOwnProperty('self')) {
-                    Object.keys(selectors[selectorKey]).forEach((nestedKey) => {
+                    Object.keys(locators[selectorKey]).forEach((nestedKey) => {
                         if (Object.getPrototypeOf(selector[nestedKey]) !== Object.prototype) {
                             this.seeElement(selector[nestedKey]);
                         }
@@ -46,7 +46,8 @@ module.exports = function () {
          * @param {number} expectedValue
          */
         checkGreaterThan(needleValue, expectedValue){
-            assert(needleValue > expectedValue, 'Assertion Error: Search result count is less than 1.');
+            assert(needleValue > expectedValue, 'Assertion Error: Needle value - ' + needleValue
+                + ' is less than expected value - ' + expectedValue);
         }
     });
 }
