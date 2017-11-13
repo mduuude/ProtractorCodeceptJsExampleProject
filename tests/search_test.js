@@ -3,15 +3,13 @@ let fragHeader = require("../fragments/header_unauth"),
     pageSearchResults = require("../pages/search_results_page"),
     utilTime = require("../utils/time_util");
 
-const baseUrl = 'https://www.booking.com';
-
 Feature('Test main page');
 
 Scenario('Test correct search by analyzing result set', function*(I) {
     let testCityName = 'New York';
     let testNumOfSearchResultsToCompare = 1;
 
-    I.goTo(baseUrl);
+    I.goTo(pageMain.url);
     fragHeader.checkFragmentContent();
     pageMain.checkFragmentContent();
     pageMain.selectDestination(testCityName);

@@ -1,5 +1,5 @@
 # Protractor/CodeceptJS Example Project
-Test booking.com site functionality using Protractor and CodeceptJS in style "from user's perspective" for demonstration purposes 
+Test booking.com site functionality using Protractor and CodeceptJS in style "from user's perspective" for demonstrative purposes 
 
 ## Prerequisites
 * **node.js >= 4.2.6**;

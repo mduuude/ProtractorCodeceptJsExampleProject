@@ -1,30 +1,32 @@
 'use strict';
 
+let config = require('../codecept.json');
+
 class ProtractorHelper extends Helper {
     /**
-     * Disable disable waiting for Angular before navigating to the page for non-Angular sites
+     * Disable Angular waiting before navigating to the page for non-Angular sites
      *
-     * @param url
+     * @param {string} specificUrl
      */
-    goTo(url) {
+    goTo(specificUrl) {
         let client = this.helpers['Protractor'].browser;
 
         client.waitForAngularEnabled(false);
 
-        return client.get(url);
+        return client.get(config.helpers.Protractor.url + specificUrl);
     }
 
     /**
      * Returns array of elements found by given xPath locator
      *
-     * @param locator
+     * @param {string} locator
      * @return int
      */
     grabElementsByLocator(locator) {
         let client = this.helpers['Protractor'].browser;
 
-        return client.element.all(by.xpath(locator)).map((elm) => {
-            return elm.getText();
+        return client.element.all(by.xpath(locator)).map((element) => {
+            return element.getText();
         });
     }
 }

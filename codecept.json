@@ -2,6 +2,7 @@
   "output": "./output",
   "helpers": {
     "Protractor": {
+      "url": "https://www.booking.com",
       "driver": "hosted",
       "browser": "chrome",
       "rootElement": "html",
