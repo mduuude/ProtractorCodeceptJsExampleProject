@@ -41,5 +41,5 @@ npm run e2e
 * /pages - described page according to page-object pattern
 * /tests - test scenarios, written in "from user's perspective" style
 * /utils - some code snippets used for various purposes through the project
-* steps_file.js - custom steps for "I" interface to extend test suite  
+* steps_file.js - custom steps for **"I"** interface to extend test suite  
 
