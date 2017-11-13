@@ -26,7 +26,7 @@ module.exports = function () {
         },
 
         /**
-         * Compare each item of array of strings on including needle string
+         * Custom assertion that each item of array includes needle string
          *
          * @param {array|string} arrayOfStrings
          * @param {string} needleString
