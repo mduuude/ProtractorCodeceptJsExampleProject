@@ -7,6 +7,7 @@ module.exports = {
     _init() {
         I = require('../steps_file.js')();
     },
+    url: 'searchresults',
 
     locators: {
         listSearchResults: {

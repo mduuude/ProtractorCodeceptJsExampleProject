@@ -17,6 +17,7 @@ Scenario('Test correct search by analyzing result set', function*(I) {
     pageMain.selectDayCheckOut(utilTime.getDayWithShift(7));
     I.click(pageMain.locators.listSearchResults.buttonSearch);
 
+    I.seeInCurrentUrl(pageSearchResults.url);
     I.waitForElement(pageSearchResults.locators.listSearchResults.textSearchResultCount);
     pageSearchResults.checkFragmentContent();
 
