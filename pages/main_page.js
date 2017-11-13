@@ -37,10 +37,10 @@ module.exports = {
     selectDestination(destinationCityName){
         let locatorListItem = '//*[@id="frm"]/div[2]/div/div[1]/ul[1]/li[*]/b[text()="' + destinationCityName + '"]';
 
-        I.waitForElement(this.locators.listSearchResults.inputDestination, 3);
+        I.waitForElement(this.locators.listSearchResults.inputDestination);
         I.fillField(this.locators.listSearchResults.inputDestination, destinationCityName);
 
-        I.waitForElement(locatorListItem, 3);
+        I.waitForElement(locatorListItem);
         I.click(locatorListItem);
     },
 
@@ -50,7 +50,7 @@ module.exports = {
             '/table/thead/tr[1]/th[text()[contains(.,"' + day.month + '")] and text()[contains(.,"' + day.year + '")]]/' +
             'parent::tr/parent::thead/parent::table/tbody/tr[*]/td[*]/span[text()[contains(.,"' + day.date + '")]]';
 
-        I.waitForElement(locatorDay, 3);
+        I.waitForElement(locatorDay);
         I.click(locatorDay);
     },
 
@@ -59,10 +59,10 @@ module.exports = {
             '/table/thead/tr[1]/th[text()[contains(.,"' + day.month + '")] and text()[contains(.,"' + day.year + '")]]' +
             '/parent::tr/parent::thead/parent::table/tbody/tr[*]/td[*]/span[text()[contains(.,"' + day.date + '")]]';
 
-        I.waitForElement(this.locators.listSearchResults.buttonDateCheckOut, 3);
+        I.waitForElement(this.locators.listSearchResults.buttonDateCheckOut);
         I.click(this.locators.listSearchResults.buttonDateCheckOut);
 
-        I.waitForElement(locatorDay, 3);
+        I.waitForElement(locatorDay);
         I.click(locatorDay);
     }
 };

@@ -3,11 +3,17 @@
 let moment = require('moment');
 
 module.exports = {
-    getDay(timeShift = 0) {
+    /**
+     * Get 'day' object depending on day shifting parameter
+     *
+     * @param {number} daysShift
+     * @return {{date: string, month: string, year: string}}
+     */
+    getDayWithShift(daysShift = 0) {
         return {
-            date: moment().add(timeShift, 'days').format('D'),
-            month: moment().add(timeShift, 'd').format('MMMM'),
-            year: moment().add(timeShift, 'd').format('YYYY')
+            date: moment().add(daysShift, 'days').format('D'),
+            month: moment().add(daysShift, 'd').format('MMMM'),
+            year: moment().add(daysShift, 'd').format('YYYY')
         };
     }
 }

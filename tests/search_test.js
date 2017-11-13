@@ -13,11 +13,11 @@ Scenario('Test correct search by analyzing result set', function*(I) {
     fragHeader.checkFragmentContent();
     pageMain.checkFragmentContent();
     pageMain.selectDestination(testCityName);
-    pageMain.selectDayCheckIn(utilTime.getDay());
-    pageMain.selectDayCheckOut(utilTime.getDay(7));
+    pageMain.selectDayCheckIn(utilTime.getDayWithShift());
+    pageMain.selectDayCheckOut(utilTime.getDayWithShift(7));
     I.click(pageMain.locators.listSearchResults.buttonSearch);
 
-    I.waitForElement(pageSearchResults.locators.listSearchResults.textSearchResultCount, 5);
+    I.waitForElement(pageSearchResults.locators.listSearchResults.textSearchResultCount);
     pageSearchResults.checkFragmentContent();
 
     let searchResultItemsTexts = yield I.grabElementsByLocator(pageSearchResults.locators.listSearchResults.listItemLocationName);

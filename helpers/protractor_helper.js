@@ -20,7 +20,7 @@ class ProtractorHelper extends Helper {
      * Returns array of elements found by given xPath locator
      *
      * @param {string} locator
-     * @return int
+     * @return {int}
      */
     grabElementsByLocator(locator) {
         let client = this.helpers['Protractor'].browser;
