@@ -12,8 +12,8 @@ module.exports = {
     getDayWithShift(daysShift = 0) {
         return {
             date: moment().add(daysShift, 'days').format('D'),
-            month: moment().add(daysShift, 'd').format('MMMM'),
-            year: moment().add(daysShift, 'd').format('YYYY')
+            month: moment().add(daysShift, 'days').format('MMMM'),
+            year: moment().add(daysShift, 'days').format('YYYY')
         };
     }
 }

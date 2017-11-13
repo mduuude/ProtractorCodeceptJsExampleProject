@@ -7,7 +7,7 @@ module.exports = function () {
         /**
          * Check multiple elements are on the page, up to second level of nesting
          *
-         * @param {object} selectors - given object of CSS|XPath|text locators
+         * @param {object|string} selectors - given object of CSS|XPath|text locators
          */
         seeManyElements(selectors) {
             Object.keys(selectors).forEach((selectorKey) => {
