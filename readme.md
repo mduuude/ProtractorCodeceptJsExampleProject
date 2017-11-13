@@ -36,4 +36,10 @@ npm run server
 npm run e2e
 ```
 ## Structure
-* /fragments - page fragments descriptions according to page-object pattern
+* /fragments - described page fragments according to page-object pattern and "reusable components" concept
+* /helpers - wrappers around used libraries (particularly, **Protractor**)
+* /pages - described page according to page-object pattern
+* /tests - test scenarios, written in "from user's perspective" style
+* /utils - some code snippets used for various purposes through the project
+* steps_file.js - custom steps for "I" interface to extend test suite  
+
