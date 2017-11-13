@@ -3,6 +3,7 @@
 let config = require('../codecept.json');
 
 class ProtractorHelper extends Helper {
+
     /**
      * Disable Angular waiting before navigating to the page for non-Angular sites
      *

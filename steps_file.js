@@ -1,9 +1,9 @@
 'use strict';
 let assert = require('assert');
 
-module.exports = function () {
-    return actor({
+module.exports = () => {
 
+    return actor({
         /**
          * Check multiple elements are on the page, up to second level of nesting
          *

@@ -3,6 +3,7 @@
 let moment = require('moment');
 
 module.exports = {
+
     /**
      * Get 'day' object depending on day shifting parameter
      *

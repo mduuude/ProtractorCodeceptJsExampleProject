@@ -3,6 +3,7 @@ let utilTime = require("../utils/time_util");
 Feature('Test main page');
 
 Scenario('Test correct search by analyzing result set', function*(I, mainPage, headerFragment, searchResultPage) {
+
     let testCityName = 'New York';
     let testNumOfSearchResultsToCompare = 1;
 
