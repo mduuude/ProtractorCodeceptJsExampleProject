@@ -1,27 +1,24 @@
-let fragHeader = require("../fragments/header_unauth"),
-    pageMain = require("../pages/main_page"),
-    pageSearchResults = require("../pages/search_results_page"),
-    utilTime = require("../utils/time_util");
+let utilTime = require("../utils/time_util");
 
 Feature('Test main page');
 
-Scenario('Test correct search by analyzing result set', function*(I) {
+Scenario('Test correct search by analyzing result set', function*(I, mainPage, headerFragment, searchResultPage) {
     let testCityName = 'New York';
     let testNumOfSearchResultsToCompare = 1;
 
-    I.goTo(pageMain.url);
-    fragHeader.checkFragmentContent();
-    pageMain.checkFragmentContent();
-    pageMain.selectDestination(testCityName);
-    pageMain.selectDayCheckIn(utilTime.getDayWithShift());
-    pageMain.selectDayCheckOut(utilTime.getDayWithShift(7));
-    I.click(pageMain.locators.listSearchResults.buttonSearch);
+    I.goTo(mainPage.url);
+    headerFragment.checkFragmentContent();
+    mainPage.checkFragmentContent();
+    mainPage.selectDestination(testCityName);
+    mainPage.selectDayCheckIn(utilTime.getDayWithShift());
+    mainPage.selectDayCheckOut(utilTime.getDayWithShift(7));
+    I.click(mainPage.locators.listSearchResults.buttonSearch);
 
-    I.seeInCurrentUrl(pageSearchResults.url);
-    I.waitForElement(pageSearchResults.locators.listSearchResults.textSearchResultCount);
-    pageSearchResults.checkFragmentContent();
+    I.seeInCurrentUrl(searchResultPage.url);
+    I.waitForElement(searchResultPage.locators.listSearchResults.textSearchResultCount);
+    searchResultPage.checkFragmentContent();
 
-    let searchResultItemsTexts = yield I.grabElementsByLocator(pageSearchResults.locators.listSearchResults.listItemLocationName);
+    let searchResultItemsTexts = yield I.grabElementsByLocator(searchResultPage.locators.listSearchResults.listItemLocationName);
     I.checkGreaterThan(searchResultItemsTexts.length, testNumOfSearchResultsToCompare);
     I.checkArrayOfStringsIncludesNeedleString(searchResultItemsTexts, testCityName);
 });
