@@ -16,9 +16,9 @@
   },
   "include": {
     "I": "./steps_file.js",
-    "mainPage": "./pages/main_page.js",
-    "headerFragment": "./fragments/header_unauth.js",
-    "searchResultPage": "./pages/search_results_page.js"
+    "mainPage": "./pages/main.js",
+    "searchResultPage": "./pages/search_results.js",
+    "headerFragment": "./fragments/header_unauth.js"
   },
   "mocha": {},
   "bootstrap": false,
