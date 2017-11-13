@@ -25,13 +25,15 @@ selenium-standalone install
 ## Run 
 
 ### Integration tests
-1. Run npm scripts:
+Run npm scripts:
 
-1.1. start `selenium-standalone server`:
+1. start `selenium-standalone server`:
 ```
 npm run server
 ```
-1.2. in new bash instance start `codeceptjs` test run:
+2. in new bash instance start `codeceptjs` test run:
 ```
 npm run e2e
 ```
+## Structure
+* /fragments - page fragments descriptions according to page-object pattern

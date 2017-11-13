@@ -8,7 +8,7 @@ module.exports = {
         I = require('../steps_file.js')();
     },
 
-    selectors: {
+    locators: {
         self: '//*/body/div[@id="top"]',
 
         logo: '//*[@id="top"]/div/img',
@@ -23,6 +23,6 @@ module.exports = {
     },
 
     checkFragmentContent(){
-        I.seeManyElements(this.selectors);
+        I.seeManyElements(this.locators);
     }
 };

@@ -8,6 +8,9 @@
   "devDependencies": {
     "codeceptjs-protractor": "^1.1.0",
     "jshint": "^2.9.5",
-    "moment": "^2.19.1"
+    "moment": "^2.19.2"
+  },
+  "dependencies": {
+    "asserts": "^4.0.2"
   }
 }
