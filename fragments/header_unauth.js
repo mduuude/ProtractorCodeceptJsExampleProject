@@ -9,13 +9,13 @@ module.exports = {
     },
 
     locators: {
-        self: '//*/body/div[@id="top"]',
+        self: '//*[@id="top"]',
 
-        logo: '//*[@id="top"]/div/img',
+        logo: '//*[@id="logo_no_globe_new_logo"]',
 
-        buttonChooseCurrency: '//*[@id="user_form"]/ul/li[@data-id="currency_selector"]/a',
+        buttonChooseCurrency: '//*[@data-id="currency_selector"]',
         buttonChooseLanguage: '//*[@id="user_form"]/ul/li[2]/a/img',
-        buttonListProperty: '//*[@id="user_form"]/ul/li[@id="add_property_topbar"]/a/div',
+        buttonListProperty: '//*[@id="add_property_topbar"]',
 
         buttonRegister: '//*[@id="user_form"]/ul/li[4]/a/div',
         buttonLogin: '//*[@id="user_form"]/ul/li[5]/a/div',
