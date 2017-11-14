@@ -12,23 +12,21 @@ module.exports = {
 
     locators: {
         listSearchResults: {
-            self: '//*[@id="basiclayout"]//*[@id="frm"]',
+            self: '//*[@id="frm" and following::div[@class="sb-searchbox__spacing"]]',
 
-            inputDestination: '//*[@id="frm"]//*[@id="ss"]',
+            inputDestination: '//*[@id="frm"]/div[2]//*[@id="ss"]',
 
-            buttonDateCheckIn: '//*[@id="frm"]/div[3]' +
-            '//*[@class="sb-dates__col --checkin-field" and descendant::div[@class="sb-date-field__display"]]',
-            buttonDateCheckOut: '//*[@id="frm"]/div[3]' +
-            '//*[@class="sb-dates__col --checkout-field" and descendant::div[@class="sb-date-field__display"]]',
+            buttonDateCheckIn: '//*[@id="frm"]/div[3]//*[@data-mode="checkin"]',
+            buttonDateCheckOut: '//*[@id="frm"]/div[3]//*[@data-mode="checkout"]',
 
-            radioForWorkYes: '//*[@id="frm"]//label[1]/input',
-            radioForWorkNo: '//*[@id="frm"]//label[2]/input',
+            radioForWorkYes: '//*[@type="radio" and @value="business"]',
+            radioForWorkNo: '//*[@type="radio" and @value="business"]',
 
-            selectorRooms: '//*[@id="frm"]//select[@class="no_rooms "]',
-            selectorAdults: '//*[@id="frm"]//select[@class="group_adults "]',
-            selectorChildren: '//*[@id="frm"]//select[@class="group_children "]',
+            selectorRooms: '//*[@id="no_rooms"]',
+            selectorAdults: '//*[@id="group_adults"]',
+            selectorChildren: '//*[@id="group_children"]',
 
-            buttonSearch: '//*[@id="frm"]/div[6]/div[2]/button'
+            buttonSearch: '//*[@class="sb-searchbox__button   "]'
         }
     },
 
@@ -37,7 +35,7 @@ module.exports = {
     },
 
     selectDestination(destinationCityName){
-        let locatorListItem = '//*[@id="frm"]//li[*]/b[text()="' + destinationCityName + '"]';
+        let locatorListItem = '//*[text()="' + destinationCityName + '"]';
 
         I.waitForElement(this.locators.listSearchResults.inputDestination);
         I.fillField(this.locators.listSearchResults.inputDestination, destinationCityName);
@@ -47,19 +45,16 @@ module.exports = {
     },
 
     selectDayCheckIn(day){
-
-        let locatorDay = '//*[@id="frm"]/div[3]/div/div[1]/div[1]//div[*]/table/thead/tr[1]' +
-            '/th[text()[contains(.,"' + day.month + '")] and text()[contains(.,"' + day.year + '")]]/parent::tr' +
-            '/parent::thead/parent::table/tbody/tr[*]/td[*]/span[text()[contains(.,"' + day.date + '")]]';
+        let locatorDay = '//*[@data-mode="checkin"]//following-sibling::div//*[text()[contains(.,"' + day.month
+            + '")] and text()[contains(.,"' + day.year + '")]]/ancestor::table//*[text()[contains(.,"' + day.date + '")]]';
 
         I.waitForElement(locatorDay);
         I.click(locatorDay);
     },
 
     selectDayCheckOut(day){
-        let locatorDay = '//*[@id="frm"]/div[3]/div/div[1]/div[2]//div[*]/table/thead/tr[1]' +
-            '/th[text()[contains(.,"' + day.month + '")] and text()[contains(.,"' + day.year + '")]]/parent::tr' +
-            '/parent::thead/parent::table/tbody/tr[*]/td[*]/span[text()[contains(.,"' + day.date + '")]]';
+        let locatorDay = '//*[@data-mode="checkout"]//following-sibling::div//*[text()[contains(.,"' + day.month
+            + '")] and text()[contains(.,"' + day.year + '")]]/ancestor::table//*[text()[contains(.,"' + day.date + '")]]';
 
         I.waitForElement(this.locators.listSearchResults.buttonDateCheckOut);
         I.click(this.locators.listSearchResults.buttonDateCheckOut);

@@ -14,11 +14,11 @@ module.exports = {
         logo: '//*[@id="logo_no_globe_new_logo"]',
 
         buttonChooseCurrency: '//*[@data-id="currency_selector"]',
-        buttonChooseLanguage: '//*[@id="user_form"]/ul/li[2]/a/img',
+        buttonChooseLanguage: '//*[@class="popover_trigger"]/img',
         buttonListProperty: '//*[@id="add_property_topbar"]',
 
-        buttonRegister: '//*[@id="user_form"]/ul/li[4]/a/div',
-        buttonLogin: '//*[@id="user_form"]/ul/li[5]/a/div',
+        buttonRegister: '//*[contains(@class,"uc_account-center-item")]/a/div',
+        buttonLogin: '//*[contains(@class,"account_register")]/a/div',
     },
 
     checkFragmentContent() {

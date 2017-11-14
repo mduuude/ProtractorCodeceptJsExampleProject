@@ -14,7 +14,7 @@ module.exports = {
         listSearchResults: {
             self: '//*[@id="searchresultsTmpl"]',
 
-            listItemLocationName: '//*[@id="hotellist_inner"]/div[*]/div[2]/div[1]/div[1]/div[2]/a',
+            listItemLocationName: '//a[contains(@id,"show_id")]/following-sibling::a',
 
             textSearchResultCount: '//*[@id="results_prev_next"]/h4'
         }
