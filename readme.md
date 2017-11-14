@@ -12,14 +12,14 @@ npm install
 ```
 
 ```
-npm install -g protractor@^5.0.0
+[sudo] npm install -g protractor@^5.0.0
 ```
 2. Install `selenium-standalone server`:
 ```
-npm install selenium-standalone@latest -g 
+[sudo] npm install selenium-standalone@latest -g
 ```
 ```
-selenium-standalone install
+[sudo] selenium-standalone install
 ```
 
 ## Run 
