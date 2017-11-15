@@ -22,9 +22,9 @@ module.exports = {
             radioForWorkYes: '//*[@type="radio" and @value="business"]',
             radioForWorkNo: '//*[@type="radio" and @value="business"]',
 
-            selectorRooms: '//*[@id="no_rooms"]',
-            selectorAdults: '//*[@id="group_adults"]',
-            selectorChildren: '//*[@id="group_children"]',
+            selectorRooms: '//*[contains(@id,"no_rooms")]',
+            selectorAdults: '//*[contains(@id,"group_adults")]',
+            selectorChildren: '//*[contains(@id,"group_children")]',
 
             buttonSearch: '//*[@class="sb-searchbox__button   "]'
         }
